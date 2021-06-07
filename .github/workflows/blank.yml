@@ -35,6 +35,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: docker build and push
         run: |
-          docker pull k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.1.0
-          docker tag k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.1.0 4pdosc/csi-node-driver-registrar:v2.1.0
-          docker push 4pdosc/csi-node-driver-registrar:v2.1.0
+          docker pull k8s.gcr.io/ingress-nginx/controller:v0.47.0
+          docker tag k8s.gcr.io/ingress-nginx/controller:v0.47.0 4pdosc/ingress-nginx-controller:v0.47.0
+          docker push 4pdosc/csi-node-driver-registrar:v0.47.0
