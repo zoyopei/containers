@@ -37,4 +37,4 @@ jobs:
         run: |
           docker pull k8s.gcr.io/ingress-nginx/controller:v0.47.0
           docker tag k8s.gcr.io/ingress-nginx/controller:v0.47.0 4pdosc/ingress-nginx-controller:v0.47.0
-          docker push 4pdosc/csi-node-driver-registrar:v0.47.0
+          docker push 4pdosc/ingress-nginx-controller:v0.47.0
