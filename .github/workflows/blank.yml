@@ -35,6 +35,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: docker build and push
         run: |
-          docker pull k8s.gcr.io/nfd/node-feature-discovery:v0.8.2
-          docker tag k8s.gcr.io/nfd/node-feature-discovery:v0.8.2 4pdosc/node-feature-discovery:v0.8.2
-          docker push 4pdosc/node-feature-discovery:v0.8.2
+          docker pull k8s.gcr.io/kube-scheduler:v1.20.9
+          docker tag k8s.gcr.io/kube-scheduler:v1.20.9 4pdosc/kube-scheduler:v1.20.9
+          docker push 4pdosc/kube-scheduler:v1.20.9
