@@ -35,6 +35,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: docker build and push
         run: |
-          docker pull k8s.gcr.io/kube-scheduler:v1.20.9
-          docker tag k8s.gcr.io/kube-scheduler:v1.20.9 4pdosc/kube-scheduler:v1.20.9
-          docker push 4pdosc/kube-scheduler:v1.20.9
+          docker pull registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
+          docker tag registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6 4pdosc/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
+          docker push 4pdosc/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
