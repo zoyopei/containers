@@ -31,10 +31,11 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB_USER }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_TOKEN }}
       - name: docker build and push
         run: |
+          bash images.sh zoyopei
           docker pull registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
           docker tag registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6 4pdosc/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
           docker push 4pdosc/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
