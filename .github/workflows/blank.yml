@@ -39,4 +39,4 @@ jobs:
       - name: docker build and push
         run: |
           echo "image repo: $IMAGE_REPO"
-          #bash images.sh $IMAGE_REPO 
+          bash images.sh $IMAGE_REPO 
