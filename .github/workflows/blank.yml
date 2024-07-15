@@ -13,10 +13,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  IMAGE_REPO: ${{ vars.IMAGE_REPO || "zoyopei1" }}
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  env:
-    IMAGE_REPO: ${{ vars.IMAGE_REPO || "zoyopei1" }}
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
