@@ -15,6 +15,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  env:
+    IMAGE_REPO: ${{ vars.IMAGE_REPO || "zoyopei1" }}
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
@@ -35,5 +37,5 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
       - name: docker build and push
         run: |
-          echo "image repo: ${{ vars.IMAGE_REPO }}"
-          bash images.sh ${{ vars.IMAGE_REPO }}
+          echo "image repo: $IMAGE_REPO"
+          #bash images.sh $IMAGE_REPO 
