@@ -35,5 +35,5 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
       - name: docker build and push
         run: |
-          echo "image repo: $IMAGE_REPO"
+          echo "image repo: ${vars.IMAGE_REPO}"
           # bash images.sh zoyopei
