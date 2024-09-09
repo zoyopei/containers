@@ -1,4 +1,5 @@
 #registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
 #ghcr.io/huggingface/text-generation-inference:1.4.3
 #ghcr.io/huggingface/text-generation-inference:2.0
-gcr.io/k8s-minikube/kicbase:v0.0.44
+#gcr.io/k8s-minikube/kicbase:v0.0.44
+registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.3
