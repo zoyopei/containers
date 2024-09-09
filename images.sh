@@ -9,8 +9,10 @@ while read image; do
     fi
     new_image=$(echo $image | awk -v REPO=$REPO -F"/" '{printf("%s/%s", REPO, $NF)}')
     docker pull --platform linux/arm64 --platform linux/amd64 $image
-    docker tag $image $new_image
-    docker push $new_image
+    docker buildx imagetools create \
+        --tag $new_image $image
+    #docker tag $image $new_image
+    #docker push $new_image
     echo $image" -> "$new_image
 
 
