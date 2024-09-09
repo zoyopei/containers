@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Copy
 
 # Controls when the action will run. 
 on:
@@ -38,7 +38,18 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_TOKEN }}
-      - name: docker build and push
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.3
+      
+      - name: Push image to GHCR
         run: |
-          echo "image repo: $IMAGE_REPO"
-          bash images.sh $IMAGE_REPO 
+          docker buildx imagetools create \
+            --tag zoyopei/ingress-nginx-kube-webhook-certgen:v1.4.3 \
+            registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.3
+
