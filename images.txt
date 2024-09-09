@@ -2,4 +2,4 @@
 #ghcr.io/huggingface/text-generation-inference:1.4.3
 #ghcr.io/huggingface/text-generation-inference:2.0
 #gcr.io/k8s-minikube/kicbase:v0.0.44
-registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.3
+registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.3 zoyopei/ingress-nginx-kube-webhook-certgen:v1.4.3
